@@ -15,7 +15,18 @@ function createDivs(root) {
     body.appendChild(container);
 }
 
+function initializeCursor() {
+    const div = document.querySelectorAll('#child');
+    for (let i = 0; i < div.length; i++){
+        div[i].addEventListener("mouseenter", () => {
+        div[i].style.backgroundColor = "red";
+})
+}
+};
+
+
 createDivs(root);
+initializeCursor();
 
 function deleteDivs() {
     const container = document.querySelector("#frame");
@@ -25,7 +36,7 @@ function deleteDivs() {
     }
 }
 
-const button = document.querySelector("button")
+const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
     let number = ""
@@ -42,5 +53,6 @@ button.addEventListener("click", () => {
     getNumber();
     deleteDivs();
     createDivs(number);
+    initializeCursor();
     
 })
